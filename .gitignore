@@ -1,0 +1,44 @@
+# AI Agent temporary files
+ai-agent-temporal-files/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Node modules (if we add any JS tooling)
+node_modules/
+npm-debug.log*
+
+# Ruby (for formula development)
+.bundle/
+vendor/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build artifacts
+build/
+dist/
