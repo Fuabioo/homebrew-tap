@@ -1,17 +1,39 @@
 # My Homebrew Tap 🍺
 
-A personal Homebrew tap containing custom formulas for various tools and applications.
+A cross-platform Homebrew tap containing custom formulas for macOS and Linux, featuring an automated formula generation system that serves as a modern alternative to APT repositories.
 
 ## What is a Homebrew Tap?
 
-A Homebrew tap is a third-party repository that allows you to install software not available in the main Homebrew repository. Think of it as a custom package repository for macOS and Linux.
+A Homebrew tap is a third-party repository that allows you to install software not available in the main Homebrew repository. Think of it as a custom package repository that works on both macOS and Linux, providing a unified package management experience across platforms.
+
+## 🌍 Cross-Platform Support
+
+This tap provides true cross-platform support:
+
+- **macOS**: Native Homebrew support (Intel and Apple Silicon)
+- **Linux**: Full Homebrew support on all major distributions
+- **Same commands**: Identical installation and usage across platforms
+- **APT Alternative**: Modern replacement for traditional APT repositories
 
 ## Installation
 
-To add this tap to your Homebrew installation:
+### macOS Installation
 
 ```bash
-brew tap yourusername/homebrew-tap
+# Homebrew should already be installed on macOS
+brew tap fuabioo/homebrew-tap
+brew install fastfetch dontrm
+```
+
+### Linux Installation
+
+```bash
+# Install Homebrew on Linux (if not already installed)
+Head to https://brew.sh/
+
+# Add tap and install packages
+brew tap fuabioo/homebrew-tap
+brew install fastfetch dontrm
 ```
 
 Once the tap is added, you can install any formula from this repository:
@@ -41,16 +63,19 @@ brew install my-python-cli
 
 ### Prerequisites
 
-- macOS or Linux
-- Homebrew installed
-- Ruby (for formula development)
-- Git
+- **macOS or Linux** (Windows via WSL also supported)
+- **Homebrew installed** (works on both platforms)
+- **just command runner** (`brew install just` or see [installation guide](https://github.com/casey/just#installation))
+- **Ruby** (for formula development)
+- **Git**
+- **GitHub token** (recommended for API access)
+- **Docker** (optional, for isolated testing environment)
 
 ### Local Development
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/homebrew-tap.git
+   git clone https://github.com/fuabioo/homebrew-tap.git
    cd homebrew-tap
    ```
 
@@ -121,39 +146,68 @@ Here are the key differences between Homebrew formulas and APT packages:
 - **Homebrew**: Ruby-based DSL (Domain Specific Language) with `.rb` files
 - **APT**: Debian control files with binary `.deb` packages
 
-### Installation Process
-- **Homebrew**: Typically builds from source with formulas describing build process
-- **APT**: Installs pre-compiled binary packages
+| Feature | APT | Homebrew |
+|---------|-----|----------|
+| **Platform Support** | Linux only | macOS + Linux |
+| **User Installation** | Root required | User space |
+| **Package Versions** | Distribution managed | Latest upstream |
+| **Dependency Management** | System-wide | Isolated |
+| **Development Tools** | Limited | Extensive |
+| **Cross-Platform Consistency** | No | Yes |
 
-### Dependency Management
-- **Homebrew**: Automatic dependency resolution with `depends_on` declarations
-- **APT**: Uses control file dependencies with more complex version constraints
+### When to Use Each
 
-### File Locations
-- **Homebrew**: Installs to `/opt/homebrew` (Apple Silicon) or `/usr/local` (Intel)
-- **APT**: Follows FHS (Filesystem Hierarchy Standard) with system-wide locations
+**Choose Homebrew when:**
+- Developing on macOS and deploying on Linux
+- Need latest versions of development tools
+- Want consistent package management across platforms
+- Working in containerized environments
+- Need user-space installation without root access
 
-### Distribution
-- **Homebrew**: Git-based tap system, formulas are distributed as Ruby code
-- **APT**: Repository-based with signed package indexes and binary distribution
+**Choose APT when:**
+- Pure Linux server environments with system integration
+- Corporate environments with strict package policies
+- Need distribution-specific optimizations
 
-### Platform Support
-- **Homebrew**: macOS and Linux
-- **APT**: Debian-based Linux distributions only
+### Migration Benefits
 
-### Package Maintenance
-- **Homebrew**: Community-driven with pull requests to formula repositories
-- **APT**: Maintained by distribution maintainers with more formal processes
+Moving from APT to Homebrew provides:
+- **Unified tooling** across development and production
+- **Latest software versions** without waiting for distribution updates
+- **User-space installation** without requiring root privileges
+- **Cross-platform consistency** for development teams
 
 ## Contributing
 
+### Adding New Formulas
+
 1. Fork this repository
 2. Create a feature branch: `git checkout -b my-new-formula`
-3. Add your formula to the `Formula/` directory
-4. Test your formula thoroughly
-5. Commit your changes: `git commit -am 'Add new formula: my-tool'`
-6. Push to the branch: `git push origin my-new-formula`
-7. Submit a pull request
+3. Create a YAML spec: `just new-spec my-tool`
+4. Edit the spec file in `specs/my-tool.yml`
+5. Generate and test the formula with end-to-end testing: `just docker-formula my-tool`
+6. Run full test suite with end-to-end testing: `just docker-test`
+7. Commit your changes: `git commit -am 'Add new formula: my-tool'`
+8. Push to the branch: `git push origin my-new-formula`
+9. Submit a pull request
+
+### Updating Existing Formulas
+
+1. Update the YAML spec in `specs/`
+2. Regenerate and test the formula with end-to-end testing: `just docker-formula name`
+3. Run validation and end-to-end testing: `just docker-e2e`
+4. Submit a pull request
+
+### Using Just Command Runner
+
+This project uses `just` as its command runner for a better developer experience. See [MIGRATION.md](MIGRATION.md) for migration details from the previous `make` system.
+
+**Command Reference:**
+- `just build` - Build all formulas
+- `just formula name` - Build specific formula
+- `just new-spec tool` - Create new spec template
+- `just test` - Run comprehensive tests
+- `just help` - Show all available commands
 
 ### Guidelines
 
@@ -206,5 +260,3 @@ This tap repository is available under the MIT License. Individual formulas may 
 - All the developers whose tools are packaged in this tap
 
 ---
-
-**Note**: Replace `yourusername` with your actual GitHub username throughout this repository.
