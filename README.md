@@ -36,6 +36,51 @@ brew tap fuabioo/homebrew-tap
 brew install fastfetch dontrm
 ```
 
+## Private Repository Access
+
+Some formulas in this tap (like `obscura`) require access to private GitHub repositories. To install these formulas, you'll need to set up a GitHub Personal Access Token.
+
+### Setting Up GitHub Token
+
+1. **Create a Personal Access Token:**
+   - Go to [GitHub Settings > Tokens](https://github.com/settings/tokens)
+   - Click "Generate new token" → "Generate new token (classic)"
+   - Give it a descriptive name (e.g., "Homebrew Tap Access")
+   - Select the `repo` scope for private repository access
+   - Click "Generate token" and copy the token
+
+2. **Set the Environment Variable:**
+   ```bash
+   export GITHUB_TOKEN=your_token_here
+   ```
+
+3. **Make it Persistent:**
+   Add the token to your shell profile so it's available in all sessions:
+   
+   **For Bash users:**
+   ```bash
+   echo 'export GITHUB_TOKEN=your_token_here' >> ~/.bashrc
+   source ~/.bashrc
+   ```
+   
+   **For Zsh users:**
+   ```bash
+   echo 'export GITHUB_TOKEN=your_token_here' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+
+4. **Install Private Repository Formulas:**
+   ```bash
+   brew install obscura
+   ```
+
+### Security Notes
+
+- Keep your token secure and never commit it to version control
+- The token only needs `repo` scope for private repository access
+- You can revoke the token anytime from GitHub settings
+- Consider using a dedicated token just for Homebrew access
+
 Once the tap is added, you can install any formula from this repository:
 
 ```bash
@@ -45,18 +90,47 @@ brew install my-python-cli
 
 ## Available Formulas
 
-### Example Tool
-A demonstration command-line tool showcasing Homebrew formula structure.
+### FastFetch
+A neofetch-like tool for displaying system information.
 
 ```bash
-brew install example-tool
+brew install fastfetch
 ```
 
-### My Python CLI
-A modern Python CLI tool with rich features and beautiful output.
+### DontRM
+Subjective safe wheels for rm. Avoid messing up your system like a clown 🤡
 
 ```bash
-brew install my-python-cli
+brew install dontrm
+```
+
+### Stella
+A command-line tool for stellar operations.
+
+```bash
+brew install stella
+```
+
+### BUF Format Stdin
+Buffer formatting tool that reads from stdin.
+
+```bash
+brew install buf-fmt-stdin
+```
+
+### PHP CS Fixer Stdin
+PHP Code Sniffer fixer that reads from stdin.
+
+```bash
+brew install php-cs-fixer-stdin
+```
+
+### Obscura
+A private tool requiring GitHub token authentication.
+
+```bash
+# Requires GITHUB_TOKEN environment variable
+brew install obscura
 ```
 
 ## Development
@@ -208,6 +282,29 @@ This project uses `just` as its command runner for a better developer experience
 - `just new-spec tool` - Create new spec template
 - `just test` - Run comprehensive tests
 - `just help` - Show all available commands
+
+### Updating Private Repository Formulas
+
+For formulas that access private repositories (like `obscura`), use the provided helper script to update versions and checksums:
+
+```bash
+# Update to a new version
+./scripts/update-obscura.sh 1.2.3
+
+# Or with explicit token
+./scripts/update-obscura.sh 1.2.3 your_github_token
+```
+
+The script will:
+- Download release assets from the private repository
+- Calculate SHA256 checksums for all platforms
+- Update the formula file automatically
+- Create a backup of the original formula
+
+**Prerequisites for updating private formulas:**
+- `jq` command-line JSON processor (`brew install jq`)
+- Valid `GITHUB_TOKEN` environment variable
+- Access to the private repository
 
 ### Guidelines
 
