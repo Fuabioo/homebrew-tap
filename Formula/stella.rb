@@ -9,6 +9,16 @@ if OS.mac? && Hardware::CPU.arm?
   sha256 "1780d9c663f2fae0fc577e81761a81f2b433d44017506d309245da556c3bb84b"
 end
 
+if OS.mac? && Hardware::CPU.intel?
+  url "https://github.com/Fuabioo/stella/releases/download/v0.0.0/stella_Darwin_x86_64.tar.gz"
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+end
+
+if OS.linux? && Hardware::CPU.intel?
+  url "https://github.com/Fuabioo/stella/releases/download/v0.0.0/stella_Linux_x86_64.tar.gz"
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+end
+
 if OS.linux? && Hardware::CPU.arm?
   url "https://github.com/Fuabioo/stella/releases/download/v0.0.0/stella_Linux_arm64.tar.gz"
   sha256 "8c1e34da1d2c58f9750293e4454164bcfaa220ac414fed6acf5486de27e68fd5"
