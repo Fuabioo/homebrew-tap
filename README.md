@@ -140,6 +140,13 @@ A CLI tool to convert MongoDB BSON dump files to SQLite databases.
 brew install bsontosqlite
 ```
 
+### yq
+A lightweight and portable command-line YAML, JSON, XML, and CSV processor. Like jq, but for YAML.
+
+```bash
+brew install yq
+```
+
 ## Development
 
 ### Prerequisites
