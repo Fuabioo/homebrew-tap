@@ -133,6 +133,13 @@ A private tool requiring GitHub token authentication.
 brew install obscura
 ```
 
+### BSON to SQLite
+A CLI tool to convert MongoDB BSON dump files to SQLite databases.
+
+```bash
+brew install bsontosqlite
+```
+
 ## Development
 
 ### Prerequisites
