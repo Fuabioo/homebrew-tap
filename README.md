@@ -90,6 +90,27 @@ brew install my-python-cli
 
 ## Available Formulas
 
+### Forjamundos
+A declarative environment setup tool for development tools. Installs and configures packages from Homebrew, NPM, APT, and direct downloads with automatic sudo PATH configuration.
+
+```bash
+brew install forjamundos
+
+# Get started
+forjamundos config generate > ~/.forjamundos.yaml
+forjamundos doctor
+forjamundos install --dry-run
+forjamundos install
+```
+
+**Features:**
+- Declarative YAML configuration for all development tools
+- Multi-source package installation (Homebrew, NPM, APT, direct downloads)
+- Automatic sudo PATH configuration for installed tools
+- Environment detection (Codespaces, Ubuntu, macOS)
+- Idempotent operations with dry-run mode
+- Comprehensive verification and diagnostics
+
 ### FastFetch
 A neofetch-like tool for displaying system information.
 
