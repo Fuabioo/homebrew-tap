@@ -5,21 +5,21 @@
 class Xlq < Formula
   desc "xlq - jq for Excel. Streaming xlsx CLI and MCP server."
   homepage "https://github.com/Fuabioo/xlq"
-  version "1.0.1"
+  version "1.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Fuabioo/xlq/releases/download/v1.0.1/xlq_Darwin_amd64.tar.gz"
-      sha256 "ee53017cb4e2c3aafd34ad5fe14240e5d23401e0bc37ccd0a9139b220a00c6ef"
+      url "https://github.com/Fuabioo/xlq/releases/download/v1.0.2/xlq_Darwin_amd64.tar.gz"
+      sha256 "6965e539bf5e7c52200de41716863c1d9ebdb9eae7dcd867f19ced4cebf0c3c2"
 
       def install
         bin.install "xlq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Fuabioo/xlq/releases/download/v1.0.1/xlq_Darwin_arm64.tar.gz"
-      sha256 "662b620624b9b90a722213ff739b477ac4783de4ddbdb329de59529a71c42289"
+      url "https://github.com/Fuabioo/xlq/releases/download/v1.0.2/xlq_Darwin_arm64.tar.gz"
+      sha256 "77a3ef2dbb0158716b38aaac64022007bf2c00db9c804e27f21e9fd7849e98c9"
 
       def install
         bin.install "xlq"
@@ -29,15 +29,15 @@ class Xlq < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Fuabioo/xlq/releases/download/v1.0.1/xlq_Linux_amd64.tar.gz"
-      sha256 "4730da6e69c3d36a290ff843e8cb19e1e51c9a0b1eaa54704ddfca605a68015f"
+      url "https://github.com/Fuabioo/xlq/releases/download/v1.0.2/xlq_Linux_amd64.tar.gz"
+      sha256 "0d3e927ced1ab5db19be427b95bd9121ca4d3efa2db0f25105936f270ebec8f0"
       def install
         bin.install "xlq"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Fuabioo/xlq/releases/download/v1.0.1/xlq_Linux_arm64.tar.gz"
-      sha256 "9520db9724284f59d42c60d7fbc0da01c46bc46a840deea0af93c6188bce5096"
+      url "https://github.com/Fuabioo/xlq/releases/download/v1.0.2/xlq_Linux_arm64.tar.gz"
+      sha256 "f711fcb21e2d828a9ab92d9066cd9bc8d3237a3ecb0c641384028e87dca548b9"
       def install
         bin.install "xlq"
       end
