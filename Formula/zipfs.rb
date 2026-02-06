@@ -5,21 +5,21 @@
 class Zipfs < Formula
   desc "zipfs - Ephemeral workspace manager for zip files. CLI and MCP server."
   homepage "https://github.com/Fuabioo/zipfs"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Fuabioo/zipfs/releases/download/v0.1.0/zipfs_Darwin_amd64.tar.gz"
-      sha256 "71b75ae6905d8d44bd2347315efaebd8b7976839880b9173dbc87f5c53aeb969"
+      url "https://github.com/Fuabioo/zipfs/releases/download/v0.2.0/zipfs_Darwin_amd64.tar.gz"
+      sha256 "2b72a1f2cdec91fedfea2cf008b3c3c08587e9534cbfe4a009db90937c33eeaf"
 
       def install
         bin.install "zipfs"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Fuabioo/zipfs/releases/download/v0.1.0/zipfs_Darwin_arm64.tar.gz"
-      sha256 "ed37546d6fded04d13560853dbcbecc93310319cb8d72ed07ca048f19fd91dcd"
+      url "https://github.com/Fuabioo/zipfs/releases/download/v0.2.0/zipfs_Darwin_arm64.tar.gz"
+      sha256 "9c3505061495b35bd11019e715e6327342bb74d9f50472995559d73927798b2f"
 
       def install
         bin.install "zipfs"
@@ -29,15 +29,15 @@ class Zipfs < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Fuabioo/zipfs/releases/download/v0.1.0/zipfs_Linux_amd64.tar.gz"
-      sha256 "5a8e2cc274b4957f1de2e439e635374afda28b17c95eced54ec6901c5b54074f"
+      url "https://github.com/Fuabioo/zipfs/releases/download/v0.2.0/zipfs_Linux_amd64.tar.gz"
+      sha256 "1edf30f6949132bb3734416fc8cac15a933fc722691e68014124c3b762ba88ae"
       def install
         bin.install "zipfs"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Fuabioo/zipfs/releases/download/v0.1.0/zipfs_Linux_arm64.tar.gz"
-      sha256 "d0e7257b958a4a2e8a545e64cace6ef8e3a1d35845225700593eb36033176e75"
+      url "https://github.com/Fuabioo/zipfs/releases/download/v0.2.0/zipfs_Linux_arm64.tar.gz"
+      sha256 "6650a7e324dcfb5565db9133965764f2f9a76b68fc59e637d2d037c09e835db3"
       def install
         bin.install "zipfs"
       end
