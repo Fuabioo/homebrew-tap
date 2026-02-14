@@ -5,21 +5,21 @@
 class Coc < Formula
   desc "CMD Output Curator — curate CLI output for AI agents"
   homepage "https://github.com/Fuabioo/coc"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Fuabioo/cmd-output-curator/releases/download/v0.1.0/coc_Darwin_amd64.tar.gz"
-      sha256 "21fcb302fd526e136c5662d6770b87c7399b6158325fb3bd47252eb9192cd9a1"
+      url "https://github.com/Fuabioo/cmd-output-curator/releases/download/v0.1.1/coc_Darwin_amd64.tar.gz"
+      sha256 "78017b1850f1337a3acf9518b5b6ff0c733454f5e98b39795c96023c9e0a005d"
 
       def install
         bin.install "coc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Fuabioo/cmd-output-curator/releases/download/v0.1.0/coc_Darwin_arm64.tar.gz"
-      sha256 "3d1d10daa73fa798fe5964304c69ba3ffb7d0831f97a15e59aa0b520d69e1f08"
+      url "https://github.com/Fuabioo/cmd-output-curator/releases/download/v0.1.1/coc_Darwin_arm64.tar.gz"
+      sha256 "529167f2271981624a7fb85ae18dd59d0b5d2d10570f0deea77cc1decf17925c"
 
       def install
         bin.install "coc"
@@ -29,15 +29,15 @@ class Coc < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Fuabioo/cmd-output-curator/releases/download/v0.1.0/coc_Linux_amd64.tar.gz"
-      sha256 "7cb6fd6ebe9fb12b12df1052ddf68826039ac49224622a7d0eb8381317a8df81"
+      url "https://github.com/Fuabioo/cmd-output-curator/releases/download/v0.1.1/coc_Linux_amd64.tar.gz"
+      sha256 "15068ff42dafc4f63e064b5605fc87f9d8c58b9565d9f0fabbd21ed56aa7bdcb"
       def install
         bin.install "coc"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Fuabioo/cmd-output-curator/releases/download/v0.1.0/coc_Linux_arm64.tar.gz"
-      sha256 "f5d3f3bec72565ed25edd8bc0ec0143d21a65cfedbc45efd764212e857f469d0"
+      url "https://github.com/Fuabioo/cmd-output-curator/releases/download/v0.1.1/coc_Linux_arm64.tar.gz"
+      sha256 "37f956af79fbe902dadcb4923fdf17f22125c937dfa3bcc9e0b7757115c0c49e"
       def install
         bin.install "coc"
       end
@@ -45,6 +45,6 @@ class Coc < Formula
   end
 
   test do
-    system "#{bin}/coc", "version"
+    system "#{bin}/coc", "--version"
   end
 end
