@@ -5,15 +5,15 @@
 class DevHud < Formula
   desc "Transparent Wayland overlay HUD for monitoring Claude Code sessions"
   homepage "https://github.com/Fuabioo/dev-hud"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   depends_on "wayland" => :optional
   depends_on :linux
 
   if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Fuabioo/dev-hud/releases/download/v0.1.0/dev-hud_0.1.0_linux_amd64.tar.gz"
-    sha256 "1704e1d3aadf45a0f3941c419045532e4b203c8a040062a7c3630c19762cb19d"
+    url "https://github.com/Fuabioo/dev-hud/releases/download/v0.1.1/dev-hud_0.1.1_linux_amd64.tar.gz"
+    sha256 "dd8e0a37a4379cd230ca8cd2d450af04b1c89a016055067a059b2e85f286251b"
     define_method(:install) do
       bin.install "dev-hud"
       bin.install "dev-hud-ctl"
@@ -22,8 +22,8 @@ class DevHud < Formula
     end
   end
   if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Fuabioo/dev-hud/releases/download/v0.1.0/dev-hud_0.1.0_linux_arm64.tar.gz"
-    sha256 "8bb727c494e970dc8e9a8a0448c11c07f731d604299dc90cb1461b2443889ce7"
+    url "https://github.com/Fuabioo/dev-hud/releases/download/v0.1.1/dev-hud_0.1.1_linux_arm64.tar.gz"
+    sha256 "2107223d1cb238a544b6c783eda5cba4d640ae5d7e139dbadde476ab480e6819"
     define_method(:install) do
       bin.install "dev-hud"
       bin.install "dev-hud-ctl"
