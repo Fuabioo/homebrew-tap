@@ -3,7 +3,7 @@ cask "docker-top" do
   name "docker-top"
   desc "docker-top - A TUI for monitoring Docker Compose projects."
   homepage "https://github.com/Fuabioo/docker-top"
-  version "0.1.0"
+  version "0.1.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "docker-top" do
   on_macos do
     on_intel do
       url "https://github.com/Fuabioo/docker-top/releases/download/v#{version}/docker-top_Darwin_amd64.tar.gz"
-      sha256 "014d2e331b4d90d5526ad0009dfa98c6ec8d69acd2e29e347dd53daae7320eb2"
+      sha256 "9dd37ff84f5c2316c0c24d6f59c44f4549e83503fb00379a86b8002342b124e6"
     end
     on_arm do
       url "https://github.com/Fuabioo/docker-top/releases/download/v#{version}/docker-top_Darwin_arm64.tar.gz"
-      sha256 "c55e8d9fa47970510cc62bc2b57cf39acbd0da4e8fd9a1504a3a182cb1aa82d8"
+      sha256 "688a26d98228ce1d77c70fac288b05db2473ec176332dfb6cbb506f54c3ab68a"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Fuabioo/docker-top/releases/download/v#{version}/docker-top_Linux_amd64.tar.gz"
-      sha256 "c56d6d536d8e983de9a24a42224ce119e0737302040088063957af45a9e203b7"
+      sha256 "7e648621e9aa37e29f7f3fc93efb30490001aeba06b18e0c9bedbbb0f4e2564b"
     end
     on_arm do
       url "https://github.com/Fuabioo/docker-top/releases/download/v#{version}/docker-top_Linux_arm64.tar.gz"
-      sha256 "fe1f69613651a65fe13fee42753bbe1ec7a3f952cb4c13165fb3c1e683c24c92"
+      sha256 "4b8a4df13084d8b284cefde3e4306e141f5f80daf4d2b8805112b615a8a62652"
     end
   end
 
