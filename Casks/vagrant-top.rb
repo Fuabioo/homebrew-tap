@@ -3,7 +3,7 @@ cask "vagrant-top" do
   name "vagrant-top"
   desc "vagrant-top - A TUI for monitoring Vagrant virtual machines."
   homepage "https://github.com/Fuabioo/vagrant-top"
-  version "0.1.0"
+  version "0.1.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "vagrant-top" do
   on_macos do
     on_intel do
       url "https://github.com/Fuabioo/vagrant-top/releases/download/v#{version}/vagrant-top_Darwin_amd64.tar.gz"
-      sha256 "f521a14282dc1a517a9c7c8f268cbdd4eeb63fc64818db617184ccfbc5448bfe"
+      sha256 "5d97f4b4b9935d4d8aca29b2cd967d5fc964e73fcf822de9e3076dd8beea2384"
     end
     on_arm do
       url "https://github.com/Fuabioo/vagrant-top/releases/download/v#{version}/vagrant-top_Darwin_arm64.tar.gz"
-      sha256 "3f21e5912e03d97c1c795c3707fda7a7d3a0bc589ba9b438406e90c666afa7a9"
+      sha256 "8db6a9bb55cff1e918d0e794b79f835cc1e696e8447b85f20ea66d7b00fd3555"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Fuabioo/vagrant-top/releases/download/v#{version}/vagrant-top_Linux_amd64.tar.gz"
-      sha256 "a7b46fdf53dfabe4a7dc46298d67f8284b4cb775614e107803c35df06d679639"
+      sha256 "0d568b0fed2fc7f02a6117ce47830e629305f42afda4a39a7e43af45362fb20e"
     end
     on_arm do
       url "https://github.com/Fuabioo/vagrant-top/releases/download/v#{version}/vagrant-top_Linux_arm64.tar.gz"
-      sha256 "84975b726812f1ee52fc601e61e7f510d133271e8f93db4449f234aac8803ce7"
+      sha256 "352e5334a17b58406b35dbaca3fb3a5d960b6574b760df39aa878ee4b18a2798"
     end
   end
 
