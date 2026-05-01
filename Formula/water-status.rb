@@ -1,33 +1,33 @@
 # Homebrew formula template for water-status.
 #
 # This file is a TEMPLATE. scripts/publish-release.sh substitutes the
-# v0.1.1 / 0.1.1 / @@SHA_*@@ placeholders before committing the
+# v0.1.2 / 0.1.2 / @@SHA_*@@ placeholders before committing the
 # rendered formula to github.com/Fuabioo/homebrew-tap.
 class WaterStatus < Formula
   desc "Monitor AyA (Costa Rica) water-service interruptions and notify Telegram"
   homepage "https://github.com/Fuabioo/water-status"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/Fuabioo/water-status/releases/download/v0.1.1/water-status-linux-amd64.tar.gz"
-      sha256 "9c4dc6eb52f925435ddbd9803ef3d660e1dac183e34b83b5dffbc54203482b94"
+      url "https://github.com/Fuabioo/water-status/releases/download/v0.1.2/water-status-linux-amd64.tar.gz"
+      sha256 "ad7614c9e895b598c669bb5ccbf597ce1a2b86559174fd0d5271a27cb57c15c5"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Fuabioo/water-status/releases/download/v0.1.1/water-status-linux-amd64.tar.gz"
-      sha256 "9c4dc6eb52f925435ddbd9803ef3d660e1dac183e34b83b5dffbc54203482b94"
+      url "https://github.com/Fuabioo/water-status/releases/download/v0.1.2/water-status-linux-amd64.tar.gz"
+      sha256 "ad7614c9e895b598c669bb5ccbf597ce1a2b86559174fd0d5271a27cb57c15c5"
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Fuabioo/water-status/releases/download/v0.1.1/water-status-linux-arm64.tar.gz"
-        sha256 "f97b6525b391a45c0a6aa7ffa8cba998c05020bbf2a002b27001143b92f96df6"
+        url "https://github.com/Fuabioo/water-status/releases/download/v0.1.2/water-status-linux-arm64.tar.gz"
+        sha256 "0c11033281da3da6462c64d248f4d38188acc254c2630952088360f828dbbbcc"
       else
-        url "https://github.com/Fuabioo/water-status/releases/download/v0.1.1/water-status-linux-armv7.tar.gz"
-        sha256 "d3778475eb9c2608d14d6673e5aa1f98da4f508ddaee6922b7d0e0b1158cba33"
+        url "https://github.com/Fuabioo/water-status/releases/download/v0.1.2/water-status-linux-armv7.tar.gz"
+        sha256 "dd152f0d683d6fc430ba07f947d27569e3cc1d1e0567c99cb11c95e13f012ebc"
       end
     end
   end
@@ -158,7 +158,10 @@ class WaterStatus < Formula
       /^ExecStart=.*$/,
       "ExecStart=#{opt_bin}/water-status",
     )
-    (unit_dir/"water-status.service").write(contents)
+    # File.write rather than Pathname#write — Homebrew patches the
+    # latter to refuse overwriting existing files (sandboxing safety),
+    # which would prevent us from updating the unit on a brew upgrade.
+    File.write(unit_dir/"water-status.service", contents)
     ohai "Installed user systemd unit at #{unit_dir}/water-status.service"
   end
 
