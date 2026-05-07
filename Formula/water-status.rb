@@ -1,33 +1,33 @@
 # Homebrew formula template for water-status.
 #
 # This file is a TEMPLATE. scripts/publish-release.sh substitutes the
-# v0.1.2 / 0.1.2 / @@SHA_*@@ placeholders before committing the
+# v0.1.3 / 0.1.3 / @@SHA_*@@ placeholders before committing the
 # rendered formula to github.com/Fuabioo/homebrew-tap.
 class WaterStatus < Formula
   desc "Monitor AyA (Costa Rica) water-service interruptions and notify Telegram"
   homepage "https://github.com/Fuabioo/water-status"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/Fuabioo/water-status/releases/download/v0.1.2/water-status-linux-amd64.tar.gz"
-      sha256 "ad7614c9e895b598c669bb5ccbf597ce1a2b86559174fd0d5271a27cb57c15c5"
+      url "https://github.com/Fuabioo/water-status/releases/download/v0.1.3/water-status-linux-amd64.tar.gz"
+      sha256 "1f457fe5ce153a2d1d465e9cae9f4e05c68bfce8725389cb629e30940c3730b5"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Fuabioo/water-status/releases/download/v0.1.2/water-status-linux-amd64.tar.gz"
-      sha256 "ad7614c9e895b598c669bb5ccbf597ce1a2b86559174fd0d5271a27cb57c15c5"
+      url "https://github.com/Fuabioo/water-status/releases/download/v0.1.3/water-status-linux-amd64.tar.gz"
+      sha256 "1f457fe5ce153a2d1d465e9cae9f4e05c68bfce8725389cb629e30940c3730b5"
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Fuabioo/water-status/releases/download/v0.1.2/water-status-linux-arm64.tar.gz"
-        sha256 "0c11033281da3da6462c64d248f4d38188acc254c2630952088360f828dbbbcc"
+        url "https://github.com/Fuabioo/water-status/releases/download/v0.1.3/water-status-linux-arm64.tar.gz"
+        sha256 "33c0b734938159084780fce6adf43adab78c07bc70fb5aed580effa70e8c615b"
       else
-        url "https://github.com/Fuabioo/water-status/releases/download/v0.1.2/water-status-linux-armv7.tar.gz"
-        sha256 "dd152f0d683d6fc430ba07f947d27569e3cc1d1e0567c99cb11c95e13f012ebc"
+        url "https://github.com/Fuabioo/water-status/releases/download/v0.1.3/water-status-linux-armv7.tar.gz"
+        sha256 "754a4a3e3962e84c0daa6ddfa7a2e2aee95a4f09f64324c630aca98df1d99240"
       end
     end
   end
