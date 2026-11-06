@@ -168,6 +168,14 @@ A lightweight and portable command-line YAML, JSON, XML, and CSV processor. Like
 brew install yq
 ```
 
+### mist
+A Go build cache (GOCACHEPROG) that keeps many worktrees and AI agents under a
+hard disk limit, with compressed and remote tiers. Apple Silicon.
+
+```bash
+brew install fuabioo/tap/mist
+```
+
 ## Development
 
 ### Prerequisites
