@@ -173,6 +173,7 @@ A Go build cache (GOCACHEPROG) that keeps many worktrees and AI agents under a
 hard disk limit, with compressed and remote tiers. Apple Silicon.
 
 ```bash
+brew tap fuabioo/tap && brew trust --formula fuabioo/tap/mist
 brew install fuabioo/tap/mist
 ```
 
