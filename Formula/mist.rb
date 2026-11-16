@@ -2,9 +2,9 @@
 class Mist < Formula
   desc "Go build cache (GOCACHEPROG) that keeps many worktrees under a disk limit"
   homepage "https://github.com/Fuabioo/homebrew-tap#mist"
-  url "https://github.com/Fuabioo/homebrew-tap/releases/download/mist-v0.1.1/mist-0.1.1-darwin-arm64.tar.gz"
-  version "0.1.1"
-  sha256 "3cd61606eb36ed2ff30930205feec2ba9ae9493c01544630fe686f498434dd15"
+  url "https://github.com/Fuabioo/homebrew-tap/releases/download/mist-v0.1.2/mist-0.1.2-darwin-arm64.tar.gz"
+  version "0.1.2"
+  sha256 "bcb32945e4672b4bad5dbe34fccb415193a31a1c5e4bc20a1ad15e9d03be160c"
 
   depends_on arch: :arm64
   depends_on :macos
