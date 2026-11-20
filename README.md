@@ -177,6 +177,15 @@ brew tap fuabioo/tap && brew trust --formula fuabioo/tap/mist
 brew install fuabioo/tap/mist
 ```
 
+### agent-usage
+Usage and pace of AI coding agents (Claude, Codex, Charm Hyper) as JSON, the CLI
+behind the agent-usage-tray menu bar app. Apple Silicon.
+
+```bash
+brew tap fuabioo/tap && brew trust --formula fuabioo/tap/agent-usage
+brew install fuabioo/tap/agent-usage
+```
+
 ## Development
 
 ### Prerequisites
